@@ -3,13 +3,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("api/v1/", include(("apps.api.urls", "api"))),
+    path("api/v1/admin/", include(("apps.api.urls.admin", "api"))),
+    path("api/v1/front/", include(("apps.api.urls.front", "api"))),
 ]
 
 if os.environ.get("DJANGO_SETTINGS_MODULE") == "config.settings.production":
     urlpatterns += [
         path("dfjeuhhdhsgdthahdhdhfkdklleewooiaujsjsau/", admin.site.urls),
-        path("api/v1/", include(("apps.api.urls", "api"))),
     ]
 else:
     from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
