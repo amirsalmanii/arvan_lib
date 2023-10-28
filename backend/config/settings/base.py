@@ -14,6 +14,7 @@ ALLOWED_HOSTS = []
 
 LOCAL_APPS = [
     "apps.api.apps.ApiConfig",
+    "auths.users.apps.UsersConfig",
 ]
 
 THIRD_PARTY_APPS = [
@@ -75,6 +76,8 @@ DATABASES = {
         "PORT": env_vars.get("db_port"),
     }
 }
+
+AUTH_USER_MODEL = "users.User"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
