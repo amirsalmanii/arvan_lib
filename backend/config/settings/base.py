@@ -14,6 +14,9 @@ ALLOWED_HOSTS = []
 
 LOCAL_APPS = [
     "apps.api.apps.ApiConfig",
+    "apps.books.apps.BooksConfig",
+    "apps.base.apps.BaseConfig",
+    "apps.category.apps.CategoryConfig",
     "auths.users.apps.UsersConfig",
 ]
 
@@ -21,6 +24,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "corsheaders",
     "rest_framework_simplejwt",
+    'treebeard',
 ]
 
 INSTALLED_APPS = [
@@ -114,3 +118,5 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+from config.confd.jwt_ import *
