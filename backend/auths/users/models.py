@@ -67,3 +67,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    @property
+    def is_admin(self):
+        return self.is_superuser
+
+    def __str__(self) -> str:
+        return self.username
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
+    role = models.CharField()
