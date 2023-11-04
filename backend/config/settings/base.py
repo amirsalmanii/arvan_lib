@@ -25,6 +25,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "rest_framework_simplejwt",
     'treebeard',
+    "storages",
 ]
 
 INSTALLED_APPS = [
@@ -120,3 +121,4 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 from config.confd.jwt_ import *
+from config.confd.storage_ import *
